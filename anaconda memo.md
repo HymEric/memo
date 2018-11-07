@@ -28,3 +28,15 @@
 # 9. search all environments, has activates env would have * or ()
 * conda info -e
 * or conda env list
+
+# 10. install a package
+* conda install package_name
+
+# 11. update a package
+* conda update package_name
+
+# 12. delete a oackage
+* conda remove package_name
+
+# 13. list all installed package
+* conda list
