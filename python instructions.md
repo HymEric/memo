@@ -165,6 +165,7 @@ the square of 5 equals 25
 * 参考：https://blog.csdn.net/u012005313/article/details/50111455
 * 详细： http://kuanghy.github.io/2016/06/30/python-argparse
 # 5. glob.glob和排序
+* import glob
 ```python
 #imgs存放图片,相当于名字路径
 imgs=glob.glob('*.png')
