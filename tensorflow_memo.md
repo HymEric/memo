@@ -22,3 +22,10 @@ to: x = [[ [1],   [2],  [5],  [6]],
      [ [9],  [10], [13],  [14]],
      [ [11], [12], [15],  [16]]]
 ```
+# 2. 检查GPU是否在干活
+```python
+import tensorflow as tf
+tf.test.gpu_device_name()
+
+'/device:GPU:0' #代表GPU在干活
+```
