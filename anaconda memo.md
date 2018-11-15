@@ -1,3 +1,7 @@
+# 0. add a channels by Tsinghua to speedup
+* conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+* conda config --set show_channel_urls yes
+
 # 1. update anaconda
 * conda update conda -> conda update anaconda
 
