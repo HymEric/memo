@@ -164,3 +164,15 @@ the square of 5 equals 25
 * default 增加默认值
 * 参考：https://blog.csdn.net/u012005313/article/details/50111455
 * 详细： http://kuanghy.github.io/2016/06/30/python-argparse
+# 5. glob.glob和排序
+```python
+#imgs存放图片,相当于名字路径
+imgs=glob.glob('*.png')
+print(imgs)
+# 图片文件最后的数字名字排序
+imgs=sorted(imgs, key=lambda name: int(name[:-4]))
+print(imgs)
+
+>>>['0.png', '1.png', '10.png', '100.png', '101.png', '102.png', '103.png', '104.png',....]
+>>>['0.png', '1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png',.....]
+```
