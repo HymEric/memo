@@ -40,3 +40,6 @@
 
 # 13. list all installed package
 * conda list
+
+# 14. add anaconda to environment path
+* modify .bashrc: add "  export PATH="/home/lishanliao/anaconda3/bin:$PATH"  "
