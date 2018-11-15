@@ -57,3 +57,109 @@ array([[10, 10, 10, 10, 10, 10, 10],
   	 [10, 10, 10, 10, 10, 10, 10],
  	 [10, 10, 10, 10, 10, 10, 10]])
 ```
+# 4. argparse
+* argparse is a Command line parsing module(命令行解析)
+* 位置参数
+```python
+import argparse
+# argparse是命令行解析模块
+parse=argparse.ArgumentParser()
+#位置参数
+# 指定位置参数后，程序必须输入该参数值才能运行
+# 指定程序将要去接受的命令行选项，在这里我们命名为echo
+parse.add_argument('echo',help="echo the string you use here")
+# argoarse将输入的参数都看作strings类型，用int时候 可以在计算过程中转化为int，或者在add_argument中指定type
+parse.add_argument("square",help="display the square of a given number",type=int)
+args=parse.parse_args()
+print(args.echo)
+print(args.square**2)
+
+E:\Workspace\PycharmProjects\VSR-DUF>python hymtest.py hym 6
+hym
+36
+
+# 也可以使用help查看输入要求
+E:\Workspace\PycharmProjects\VSR-DUF>python hymtest.py -h
+usage: hymtest.py [-h] echo square
+
+positional arguments:
+  echo        echo the string you use here
+  square      display the square of a given number
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+```
+* 可选参数
+```python
+# 第二种，可选参数
+import argparse
+
+parser = argparse.ArgumentParser()
+# 默认可选参数赋值为str
+parser.add_argument("--verbosity", help="increase output verbosity")
+args = parser.parse_args()
+if args.verbosity:
+    print("verbosity turned on")
+    
+E:\Workspace\PycharmProjects\VSR-DUF>python hymtest.py --verbosity hym
+verbosity turned on
+
+```
+
+```python
+# 很多时候，可选参数是作为一个标识而不是一个确切的值，仅需要确定是true或false即可，可以指定关键字action，赋值为"store_true"：
+parser = argparse.ArgumentParser()
+# 默认可选参数赋值为str
+parser.add_argument("--verbosity", help="increase output verbosity",action="store_true") # 输入赋值给verbosity
+args = parser.parse_args()
+if args.verbosity:
+    print("verbosity turned on")
+    
+E:\Workspace\PycharmProjects\VSR-DUF>python hymtest.py --verbosity
+verbosity turned on
+
+```
+
+* 短选项，类似命令行用法，长选项总会有相应的短选项，只需在相应的add_argument()方法中加上即可:
+```python
+parser.add_argument("-v",--verbosity", help="increase output verbosity",action="store_true") # 输入赋值给verbosity
+
+E:\Workspace\PycharmProjects\VSR-DUF>python hymtest.py -v
+verbosity turned on
+
+```
+
+* 指定输入参数范围，关键字choices
+```python
+parser.add_argument("-v", "--verbosity", type=int, choices=[0,1,2], help="increase output verbosity")
+```
+
+* 结合使用
+```python
+import argparse
+ 
+parser = argparse.ArgumentParser()
+parser.add_argument("square", type=int, help="display a square of a given number")
+parser.add_argument("-v", "--verbosity", type=int, help="increase output verbosity")
+args = parser.parse_args()
+answer = args.square**2
+if args.verbosity == 2:
+    print("the square of {} equals {}".format(args.square, answer))
+elif args.verbosity == 1:
+    print("{}^2 == {}".format(args.square, answer))
+else:
+    print(answer)
+    
+E:\Workspace\PycharmProjects\VSR-DUF>python hymtest.py 2 -v 1
+2^2 == 4
+
+E:\Workspace\PycharmProjects\VSR-DUF>python hymtest.py 2 -v 2
+the square of 2 equals 4
+
+E:\Workspace\PycharmProjects\VSR-DUF>python hymtest.py -v 2 5
+the square of 5 equals 25
+
+```
+* default 增加默认值
+* 参考：https://blog.csdn.net/u012005313/article/details/50111455
