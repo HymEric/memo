@@ -7,3 +7,10 @@
 * mv dir1 dir2
 * mv path1 path2
 * 移动当前文件夹下所有文件到指定位置 mv * path
+# 4. unzip命令
+* unzip -o -d /home/sunny myfile.zip
+把myfile.zip文件解压到 /home/sunny/
+
+-o:不提示的情况下覆盖文件；
+
+-d:-d /home/sunny 指明将文件解压缩到/home/sunny目录下；
