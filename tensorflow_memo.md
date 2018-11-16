@@ -29,3 +29,5 @@ tf.test.gpu_device_name()
 
 '/device:GPU:0' #代表GPU在干活
 ```
+# 3. 运行时使用特定GPU
+* CUDA_VISIBLE_DEVICES=1 python your_python_file.py some_parameter_maybe_
