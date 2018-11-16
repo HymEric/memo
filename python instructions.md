@@ -197,3 +197,40 @@ print(imgs)
 >>>['0.png', '1.png', '10.png', '100.png', '101.png', '102.png', '103.png', '104.png',....]
 >>>['0.png', '1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png',.....]
 ```
+# 6. importlib.import_module动态导入模块
+文件结构
+
+```
+├── clazz
+│   ├── __init__.py
+│   ├── a.py
+│   └── b.py
+└── main.py
+```
+
+a.py 的代码
+
+def show():
+    print("show A")
+
+b.py 的代码
+
+def show():
+    print("show B")
+
+从main中导入clazz包中的a 和b 模块
+main.py
+```python
+import importlib
+
+# 绝对导入
+a = importlib.import_module("clazz.a")
+a.show()
+# show A
+
+# 相对导入
+b = importlib.import_module(".b", "clazz")
+b.show()
+# show B
+```
+注意，相对导入有个一点.， 类似路径
