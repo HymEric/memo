@@ -31,3 +31,19 @@ tf.test.gpu_device_name()
 ```
 # 3. 运行时使用特定GPU
 * CUDA_VISIBLE_DEVICES=1 python your_python_file.py some_parameter_maybe_
+# 4. tf.clip_by_value(A, min, max)
+* 输入一个张量A，把A中的每一个元素的值都压缩在min和max之间。小于min的让它等于min，大于max的元素的值等于max。
+```python
+
+import tensorflow as tf;
+import numpy as np;
+ 
+A = np.array([[1,1,2,4], [3,4,8,5]])
+ 
+with tf.Session() as sess:
+	print sess.run(tf.clip_by_value(A, 2, 5))
+
+输出：
+[[2 2 2 4]
+ [3 4 5 5]]
+```
