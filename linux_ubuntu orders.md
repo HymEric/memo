@@ -16,3 +16,6 @@
 -d:-d /home/sunny 指明将文件解压缩到/home/sunny目录下；
 # 5. 查看磁盘占用的情况
 * df -h
+# 6. 压缩.tar.gz文件. 
+* 将当前路径下的VSR-DUF_Youku文件夹中的东西都打包成VSR-DUF_Youku.tar.gz
+* tar -czvf VSR-DUF_Youku.tar.gz VSR-DUF_Youku
