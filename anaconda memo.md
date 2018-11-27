@@ -52,3 +52,4 @@
 
 # 15. 在新环境中使用notebook
 * 先在新环境中安装notebook，可以用navigator安装，之后到想用的文件夹中命令行 激活环境之后 执行jupyter notebook
+* source activate --envs_name-- 之后 conda install jupyter 之后 jupyter notebook
