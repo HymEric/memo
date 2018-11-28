@@ -19,3 +19,7 @@
 # 6. 压缩.tar.gz文件. 
 * 将当前路径下的VSR-DUF_Youku文件夹中的东西都打包成VSR-DUF_Youku.tar.gz
 * tar -czvf VSR-DUF_Youku.tar.gz VSR-DUF_Youku
+# 7. 正确执行.sh文件的方法
+* dao .sh 所在目录 cd xxx
+* 给.sh文件添加x执行权限  chmod u+x hello.sh
+* 执行.sh文件 ./hello.sh
