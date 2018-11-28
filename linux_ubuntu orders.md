@@ -23,3 +23,5 @@
 * dao .sh 所在目录 cd xxx
 * 给.sh文件添加x执行权限  chmod u+x hello.sh
 * 执行.sh文件 ./hello.sh
+# 8. 解压.tar.gz文件
+* tar -zxf XXX.tar.gz （可选-C 解压位置）
