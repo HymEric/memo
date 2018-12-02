@@ -25,3 +25,8 @@
 * 执行.sh文件 ./hello.sh
 # 8. 解压.tar.gz文件
 * tar -zxf XXX.tar.gz （可选-C 解压位置）
+# 9. 查看linux 内核版本
+* uname -r
+# 10. 查看linux正在运行的版本
+* cat /etc/issue
+* 或者 sudo lsb_release -a 需要管理员相应权限
