@@ -30,3 +30,5 @@
 # 10. 查看linux正在运行的版本
 * cat /etc/issue
 * 或者 sudo lsb_release -a 需要管理员相应权限
+# 11. 查看cuda版本
+* nvcc-V
