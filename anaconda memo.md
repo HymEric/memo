@@ -54,3 +54,18 @@
 # 15. 在新环境中使用notebook
 * 先在新环境中安装notebook，可以用navigator安装，之后到想用的文件夹中命令行 激活环境之后 执行jupyter notebook
 * source activate --envs_name-- 之后 conda install jupyter 之后 jupyter notebook
+
+# 16. install dlib in wi10
+第一步：下载相应whl文件：
+
+python2 和 python3.5：
+
+https://pypi.org/project/dlib/18.17.100/#files
+
+python3.6：
+
+https://pypi.org/project/dlib/19.7.0/#files
+
+第二步：
+
+pip install xxx.whl
