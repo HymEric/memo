@@ -32,3 +32,8 @@
 * 或者 sudo lsb_release -a 需要管理员相应权限
 # 11. 查看cuda版本
 * nvcc-V
+# 12. create a folder
+* mkdir --name--
+# 13. 将A文件夹下所有图片移动到B
+* find ./A -name "*.jpg" | xargs mv -t ./B
+
