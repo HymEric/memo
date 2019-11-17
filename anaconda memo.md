@@ -69,3 +69,10 @@ https://pypi.org/project/dlib/19.7.0/#files
 第二步：
 
 pip install xxx.whl
+
+# 17. install scikit-learn py-version problems
+If you install scikit-learn by ``` conda install scikit_learn``` with py37 when tf is py36. You can run bellow to solve it.
+```shell
+conda install scikit_learn
+conda install python=3.6
+```
