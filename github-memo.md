@@ -11,7 +11,10 @@ git lfs track ".wav"
 # add all files or you can just add your Big_Files
 git add .
 git commit -m "yyyy"
+# convert your large files to lfs type which can be used
 java -jar path_to_bfg/bfg-1.12.15.jar --convert-to-git-lfs "*.{wav,h5}" --no-blob-protection
+# run and see your files have been tracked, if nothing, maybe you encountered an problem
+git lfs lf-files
 # push
 git push origin master
 ```
