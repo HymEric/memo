@@ -76,3 +76,10 @@ If you install scikit-learn by ``` conda install scikit_learn``` with py37 when 
 conda install scikit_learn
 conda install python=3.6
 ```
+
+# 19. uninstall the package after installing by distutils
+If you run py file and get the same result, even you change the code or delete the file, the problem will be this
+```shell
+$ python setup.py install --record files.txt
+$ cat files.txt | xargs rm -rf          # delete
+```
