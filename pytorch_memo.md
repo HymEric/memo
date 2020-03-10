@@ -9,3 +9,11 @@ https://www.cnblogs.com/wanghui-garcia/p/11385160.html
 ### 2. 构建模型的几种方法
 如何寻找适合自己的构建模型的方法，以方便后续的使用？ 比如要找到一个特定名称的层
 参考：https://www.cnblogs.com/denny402/p/7593301.html  
+
+### 3. pytorch中的padding策略
+可以根据公式计算padding应该是什么，比如padding=[1,2]，代表在H上也就是上下各padding 1行，W上左右个padding 2行
+$$
+H_out=\lfloor \frac{H_in - kernel_size[0] + 2 \times padding}{strides[0]} +1  \rfloor
+W_out=\lfloor \frac{W_in - kernel_size[0] + 2 \times padding}{strides[0]} +1  \rfloor
+$$
+参考：https://blog.csdn.net/g11d111/article/details/82665265?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
