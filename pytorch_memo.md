@@ -11,9 +11,9 @@ https://www.cnblogs.com/wanghui-garcia/p/11385160.html
 参考：https://www.cnblogs.com/denny402/p/7593301.html  
 
 ### 3. pytorch中的padding策略
-可以根据公式计算padding应该是什么，比如padding=[1,2]，代表在H上也就是上下各padding 1行，W上左右个padding 2行  
+可以根据公式计算padding应该是什么，比如padding=[1,2]，代表在H上也就是上下各padding 1行，W上左右个padding 2行，默认padding的是数字0
 $$
-H_out=\lfloor \frac{H_in - kernel_size[0] + 2 \times padding}{strides[0]} +1  \rfloor  
+H_out=\lfloor \frac{H_in - kernel_size[0] + 2 \times padding}{strides[0]} +1  \rfloor \\
 W_out=\lfloor \frac{W_in - kernel_size[0] + 2 \times padding}{strides[0]} +1  \rfloor
 $$  
 参考：https://blog.csdn.net/g11d111/article/details/82665265?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
