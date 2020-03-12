@@ -26,5 +26,7 @@ https://zhuanlan.zhihu.com/p/39752167
 给训练踩踩油门 —— Pytorch 加速数据读取： https://zhuanlan.zhihu.com/p/80695364
 
 ### 6. 如何设计一个好的pytorch项目框架：
-https://github.com/IgorSusmelj/pytorch-styleguide
+https://github.com/IgorSusmelj/pytorch-styleguide  
+一个训练模板：https://www.ctolib.com/victoresque-pytorch-template.html
+
 
