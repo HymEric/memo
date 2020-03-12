@@ -15,3 +15,16 @@ https://www.cnblogs.com/wanghui-garcia/p/11385160.html
 $$H_{out}=\lfloor \frac{H_{in} - kernel_size[0] + 2 \times padding}{strides[0]} +1  \rfloor$$
 $$W_{out}=\lfloor \frac{W_{in} - kernel_size[0] + 2 \times padding}{strides[0]} +1  \rfloor$$    
 参考：https://blog.csdn.net/g11d111/article/details/82665265?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
+
+### 4. 自定义dataset
+在getitem中得到的数据应该是numpy array或者PILImage格式的，注意图像的RGB顺序，  
+如果要使用torchvision中的数据集，要记得里面的数据集得到的是PILImage格式的，transform中一般都需要进行Tensor转化  
+为了节约内存可以使用txt进行读取数据：https://blog.csdn.net/lyl771857509/article/details/84642560 ，但如果内存、显存够的话推荐还在先全部加载，这样后面的训练会更快！ 
+
+### 5. Pytorch 提速指南
+https://zhuanlan.zhihu.com/p/39752167  
+给训练踩踩油门 —— Pytorch 加速数据读取： https://zhuanlan.zhihu.com/p/80695364
+
+### 6. 如何设计一个好的pytorch项目框架：
+https://github.com/IgorSusmelj/pytorch-styleguide
+
