@@ -1,12 +1,12 @@
 
 <!--TOC-->
-- [1. 关于pytorch中的初始化问题](#1.-关于pytorch中的初始化问题)
+- [1. 关于pytorch中的初始化问题](#1\.-关于pytorch中的初始化问题)
 - [2. 构建模型的几种方法](#2.-构建模型的几种方法)
-- [3. pytorch中的padding策略](#3. pytorch中的padding策略)
+- [3. pytorch中的padding策略](#3.-pytorch中的padding策略)
 - [4. 自定义dataset](#4.-自定义dataset)
-- [5. Pytorch 提速指南](#5. Pytorch 提速指南)
-- [6. 如何设计一个好的pytorch项目框架：](36. 如何设计一个好的pytorch项目框架：) 
-- [7. 关于保存模型与加载模型](7. 关于保存模型与加载模型)
+- [5. Pytorch 提速指南](#5.-Pytorch 提速指南)
+- [6. 如何设计一个好的pytorch项目框架：](#6-如何设计一个好的pytorch项目框架：) 
+- [7. 关于保存模型与加载模型](7.-关于保存模型与加载模型)
 <!--TOC-->
 
 ### 1. 关于pytorch中的初始化问题
