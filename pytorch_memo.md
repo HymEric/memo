@@ -1,3 +1,14 @@
+
+<!--TOC-->
+- [1. 关于pytorch中的初始化问题](#1.-关于pytorch中的初始化问题)
+- [2. 构建模型的几种方法](#2.-构建模型的几种方法)
+- [3. pytorch中的padding策略](#3. pytorch中的padding策略)
+- [4. 自定义dataset](#4.-自定义dataset)
+- [5. Pytorch 提速指南](#5. Pytorch 提速指南)
+- [6. 如何设计一个好的pytorch项目框架：](36. 如何设计一个好的pytorch项目框架：) 
+- [7. 关于保存模型与加载模型](7. 关于保存模型与加载模型)
+<!--TOC-->
+
 ### 1. 关于pytorch中的初始化问题
 默认状况下，nn中的conv和linear里面的weight都是kaiming初始化，bias都是unifor初始化（1.1cpu版本），可以通过源码查询。当需要自己设置的时候也可以
 自己设置初始化方式
@@ -28,5 +39,8 @@ https://zhuanlan.zhihu.com/p/39752167
 ### 6. 如何设计一个好的pytorch项目框架：
 https://github.com/IgorSusmelj/pytorch-styleguide  
 一个训练模板：https://www.ctolib.com/victoresque-pytorch-template.html
+
+### 7. 关于保存模型与加载模型
+参考：https://zhuanlan.zhihu.com/p/38056115
 
 
