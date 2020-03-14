@@ -8,6 +8,7 @@
 - [5. Pytorch 提速指南](#5-Pytorch-提速指南)
 - [6. 如何设计一个好的pytorch项目框架：](#6-如何设计一个好的pytorch项目框架) 
 - [7. 关于保存模型与加载模型](#7-关于保存模型与加载模型)
+- [8. 关于自动求导和特定tensor的导数](#8-关于自动求导和特定tensor的导数)
 <!--TOC-->
 
 ### 1. 关于pytorch中的初始化问题
@@ -44,4 +45,5 @@ https://github.com/IgorSusmelj/pytorch-styleguide
 ### 7. 关于保存模型与加载模型
 参考：https://zhuanlan.zhihu.com/p/38056115
 
-
+### 8. 关于自动求导和特定tensor的导数
+参考： https://www.cnblogs.com/marsggbo/p/11549631.html
