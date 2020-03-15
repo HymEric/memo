@@ -47,3 +47,7 @@ https://github.com/IgorSusmelj/pytorch-styleguide
 
 ### 8. 关于自动求导和特定tensor的导数
 参考： https://www.cnblogs.com/marsggbo/p/11549631.html
+
+### 9. 关于pytorch的小知识点，包括argparse、tqdm、logging等等
+参考：https://zhuanlan.zhihu.com/p/104706637?utm_source=wechat_session
+
