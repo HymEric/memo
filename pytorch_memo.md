@@ -9,6 +9,7 @@
 - [6. 如何设计一个好的pytorch项目框架：](#6-如何设计一个好的pytorch项目框架) 
 - [7. 关于保存模型与加载模型](#7-关于保存模型与加载模型)
 - [8. 关于自动求导和特定tensor的导数](#8-关于自动求导和特定tensor的导数)
+- [9. 关于pytorch的小知识点包括argparse,tqdm,logging等等](#9-关于pytorch的小知识点包括argparsetqdmlogging等等)
 <!--TOC-->
 
 ### 1. 关于pytorch中的初始化问题
@@ -39,7 +40,7 @@ https://zhuanlan.zhihu.com/p/39752167
 给训练踩踩油门 —— Pytorch 加速数据读取： https://zhuanlan.zhihu.com/p/80695364
 
 ### 6. 如何设计一个好的pytorch项目框架：
-https://github.com/IgorSusmelj/pytorch-styleguide  
+https://github.com/IgorSusmelj/pytorch-styleguide ，**但是要注意使用prefetch_generator，可能会OOM，显存使用过大**
 一个训练模板：https://www.ctolib.com/victoresque-pytorch-template.html
 
 ### 7. 关于保存模型与加载模型
@@ -48,6 +49,6 @@ https://github.com/IgorSusmelj/pytorch-styleguide
 ### 8. 关于自动求导和特定tensor的导数
 参考： https://www.cnblogs.com/marsggbo/p/11549631.html
 
-### 9. 关于pytorch的小知识点，包括argparse、tqdm、logging等等
+### 9. 关于pytorch的小知识点包括argparse,tqdm,logging等等
 参考：https://zhuanlan.zhihu.com/p/104706637?utm_source=wechat_session
 
