@@ -5,8 +5,8 @@
 - [2. 构建模型的几种方法](#2-构建模型的几种方法)
 - [3. pytorch中的padding策略](#3-pytorch中的padding策略)
 - [4. 自定义dataset](#4-自定义dataset)
-- [5. Pytorch 提速指南](#5-Pytorch-提速指南)
-- [6. 如何设计一个好的pytorch项目框架：](#6-如何设计一个好的pytorch项目框架) 
+- [5. Pytorch提速指南](#5-Pytorch提速指南)
+- [6. 如何设计一个好的pytorch项目框架](#6-如何设计一个好的pytorch项目框架) 
 - [7. 关于保存模型与加载模型](#7-关于保存模型与加载模型)
 - [8. 关于自动求导和特定tensor的导数](#8-关于自动求导和特定tensor的导数)
 - [9. 关于pytorch的小知识点包括argparse,tqdm,logging等等](#9-关于pytorch的小知识点包括argparsetqdmlogging等等)
@@ -23,7 +23,7 @@ https://www.cnblogs.com/wanghui-garcia/p/11385160.html
 ### 2. 构建模型的几种方法
 如何寻找适合自己的构建模型的方法，以方便后续的使用？ 比如要找到一个特定名称的层
 参考：https://www.cnblogs.com/denny402/p/7593301.html  
-**注意：**不能在forward里面定义网络层，只能在里面进行运算操作，可以加入比如relu等没有参数的操作，要不然每次运行model 的forward都会初始化一遍参数，是不对的。
+**注意：不能在forward里面定义网络层，只能在里面进行运算操作，可以加入比如relu等没有参数的操作，要不然每次运行model 的forward都会初始化一遍参数，是不对的。**
 
 ### 3. pytorch中的padding策略
 可以根据公式计算padding应该是什么，比如padding=[1,2]，代表在H上也就是上下各padding 1行，W上左右个padding 2行，默认padding的是数字0  
@@ -36,11 +36,11 @@ $$W_{out}=\lfloor \frac{W_{in} - kernel_size[0] + 2 \times padding}{strides[0]} 
 如果要使用torchvision中的数据集，要记得里面的数据集得到的是PILImage格式的，transform中一般都需要进行Tensor转化  
 为了节约内存可以使用txt进行读取数据：https://blog.csdn.net/lyl771857509/article/details/84642560 ，但如果内存、显存够的话推荐还在先全部加载，这样后面的训练会更快！ 
 
-### 5. Pytorch 提速指南
+### 5. Pytorch提速指南
 https://zhuanlan.zhihu.com/p/39752167  
 给训练踩踩油门 —— Pytorch 加速数据读取： https://zhuanlan.zhihu.com/p/80695364
 
-### 6. 如何设计一个好的pytorch项目框架：
+### 6. 如何设计一个好的pytorch项目框架
 https://github.com/IgorSusmelj/pytorch-styleguide ，**但是要注意使用prefetch_generator，可能会OOM，显存使用过大**
 一个训练模板：https://www.ctolib.com/victoresque-pytorch-template.html
 
@@ -53,4 +53,3 @@ https://github.com/IgorSusmelj/pytorch-styleguide ，**但是要注意使用pref
 ### 9. 关于pytorch的小知识点包括argparse,tqdm,logging等等
 参考：https://zhuanlan.zhihu.com/p/104706637?utm_source=wechat_session
 
-### 10.
