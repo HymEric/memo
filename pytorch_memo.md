@@ -23,6 +23,7 @@ https://www.cnblogs.com/wanghui-garcia/p/11385160.html
 ### 2. 构建模型的几种方法
 如何寻找适合自己的构建模型的方法，以方便后续的使用？ 比如要找到一个特定名称的层
 参考：https://www.cnblogs.com/denny402/p/7593301.html  
+**注意：**不能在forward里面定义网络层，只能在里面进行运算操作，可以加入比如relu等没有参数的操作，要不然每次运行model 的forward都会初始化一遍参数，是不对的。
 
 ### 3. pytorch中的padding策略
 可以根据公式计算padding应该是什么，比如padding=[1,2]，代表在H上也就是上下各padding 1行，W上左右个padding 2行，默认padding的是数字0  
@@ -52,3 +53,4 @@ https://github.com/IgorSusmelj/pytorch-styleguide ，**但是要注意使用pref
 ### 9. 关于pytorch的小知识点包括argparse,tqdm,logging等等
 参考：https://zhuanlan.zhihu.com/p/104706637?utm_source=wechat_session
 
+### 10.
