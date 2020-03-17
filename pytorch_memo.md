@@ -10,6 +10,7 @@
 - [7. 关于保存模型与加载模型](#7-关于保存模型与加载模型)
 - [8. 关于自动求导和特定tensor的导数](#8-关于自动求导和特定tensor的导数)
 - [9. 关于pytorch的小知识点包括argparse,tqdm,logging等等](#9-关于pytorch的小知识点包括argparsetqdmlogging等等)
+- [10. pytorch不同版本转换](#10-pytorch不同版本转换) 
 <!--TOC-->
 
 ### 1. 关于pytorch中的初始化问题
@@ -52,4 +53,7 @@ https://github.com/IgorSusmelj/pytorch-styleguide ，**但是要注意使用pref
 
 ### 9. 关于pytorch的小知识点包括argparse,tqdm,logging等等
 参考：https://zhuanlan.zhihu.com/p/104706637?utm_source=wechat_session
+
+### 10. pytorch不同版本转换
+pytorch不同版本之间有差别，从0.3.1转到0.4.1或更高版本等，可参考：https://heroinlin.github.io/2019/02/27/Pytorch/Pytorch_version_transform/
 
