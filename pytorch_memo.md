@@ -11,6 +11,7 @@
 - [8. 关于自动求导和特定tensor的导数](#8-关于自动求导和特定tensor的导数)
 - [9. 关于pytorch的小知识点包括argparse,tqdm,logging等等](#9-关于pytorch的小知识点包括argparsetqdmlogging等等)
 - [10. pytorch不同版本转换](#10-pytorch不同版本转换) 
+- [11. 关于backward中的retain_graph的问题](#11-关于backward中的retain_graph的问题)
 <!--TOC-->
 
 ### 1. 关于pytorch中的初始化问题
@@ -56,4 +57,17 @@ https://github.com/IgorSusmelj/pytorch-styleguide ，**但是要注意使用pref
 
 ### 10. pytorch不同版本转换
 pytorch不同版本之间有差别，从0.3.1转到0.4.1或更高版本等，可参考：https://heroinlin.github.io/2019/02/27/Pytorch/Pytorch_version_transform/
+
+### 11. 关于backward中的retain_graph的问题
+当训练的网络中存在多个loss的时候，并且这些loss还是相关联的，如果正常最loss1.backward()，那么后面的loss2，loss3可能会报错，因为这时候计算图已经释放了，如果有三个loss，我们需要这样写
+```python
+...
+loss1.backward(retain_graph=True)
+...
+loss2.backward(retain_graph=True)
+...
+loss3.backward() # note here no retain_graph=True for freeing the computation graph
+```
+参考：https://discuss.pytorch.org/t/runtimeerror-trying-to-backward-through-the-graph-a-second-time-but-the-buffers-have-already-been-freed-specify-retain-graph-true-when-calling-backward-the-first-time/6795
+
 
