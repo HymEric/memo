@@ -12,7 +12,7 @@
 - [9. 关于pytorch的小知识点包括argparse,tqdm,logging等等](#9-关于pytorch的小知识点包括argparsetqdmlogging等等)
 - [10. pytorch不同版本转换](#10-pytorch不同版本转换) 
 - [11. 关于backward中的retain_graph的问题](#11-关于backward中的retain_graph的问题)
-- [12. 一个框架中多网络训练的require_grad问题](#12-一个框架中多网络训练的require_grad问题)
+- [12. 一个框架中多网络训练的require_grad问题](#12-一个框架中多网络训练的requires_grad问题)
 <!--TOC-->
 
 ### 1. 关于pytorch中的初始化问题
