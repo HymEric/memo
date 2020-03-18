@@ -12,6 +12,7 @@
 - [9. 关于pytorch的小知识点包括argparse,tqdm,logging等等](#9-关于pytorch的小知识点包括argparsetqdmlogging等等)
 - [10. pytorch不同版本转换](#10-pytorch不同版本转换) 
 - [11. 关于backward中的retain_graph的问题](#11-关于backward中的retain_graph的问题)
+- [12. 一个框架中多网络训练的require_grad问题](#12-一个框架中多网络训练的require_grad问题)
 <!--TOC-->
 
 ### 1. 关于pytorch中的初始化问题
@@ -69,5 +70,9 @@ loss2.backward(retain_graph=True)
 loss3.backward() # note here no retain_graph=True for freeing the computation graph
 ```
 参考：https://discuss.pytorch.org/t/runtimeerror-trying-to-backward-through-the-graph-a-second-time-but-the-buffers-have-already-been-freed-specify-retain-graph-true-when-calling-backward-the-first-time/6795
+
+### 12. 一个框架中多网络训练的requires_grad问题
+有一次在训练一个包含多个模型的（有GAN）框架，但是GAN的loss怎么越来越大（一个正的大一个负的大）呢？原因是因为一个框架中有多个模型训练的时候，一个模型训练要把其他的模型的requires_grad设置为False，只把当前需要更新的模型设置为True才行，要不然loss就会变得出奇的大或者小，这个时候就感觉pytrch的动态图没有tf的静态图好用。
+
 
 
