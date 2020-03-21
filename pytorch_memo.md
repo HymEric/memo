@@ -13,6 +13,7 @@
 - [10. pytorch不同版本转换](#10-pytorch不同版本转换) 
 - [11. 关于backward中的retain_graph的问题](#11-关于backward中的retain_graph的问题)
 - [12. 一个框架中多网络训练的require_grad问题](#12-一个框架中多网络训练的requires_grad问题)
+- [13. 关于tensorboardX和pytorch版本问题](#13-关于tensorboardX和pytorch版本问题)
 <!--TOC-->
 
 ### 1. 关于pytorch中的初始化问题
@@ -74,5 +75,8 @@ loss3.backward() # note here no retain_graph=True for freeing the computation gr
 ### 12. 一个框架中多网络训练的requires_grad问题
 有一次在训练一个包含多个模型的（有GAN）框架，但是GAN的loss怎么越来越大（一个正的大一个负的大）呢？原因是因为一个框架中有多个模型训练的时候，一个模型训练要把其他的模型的requires_grad设置为False，只把当前需要更新的模型设置为True才行，要不然loss就会变得出奇的大或者小，这个时候就感觉pytrch的动态图没有tf的静态图好用。
 
+### 13. 关于tensorboardX和pytorch版本问题
+在训练期间，遇到了tensorboardX报错，比如init() got an unexpected keyword argument 'record_shapes'和缺失参数的错误，解决办法可以调整tensorboardX或者pytorch版本，已确定tensorboardX1.8和pytorch1.1.0可以使用。
+参考：https://blog.csdn.net/jzwong/article/details/104130073
 
 
