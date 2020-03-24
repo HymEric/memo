@@ -235,3 +235,7 @@ b.show()
 ```
 注意，相对导入有个一点.， 类似路径
 可以参考： https://blog.csdn.net/xie_0723/article/details/78004649
+
+# 7. Python类中的 私有变量和私有方法（伪私有）
+python中实际上都是public，没有真正的私有化支持，但是可以在变量和方法前面加上双下划线“__”，变成伪私有，这样外部类就访问不了了。  
+参考：https://blog.csdn.net/sxingming/article/details/52875125
