@@ -14,6 +14,7 @@
 - [11. 关于backward中的retain_graph的问题](#11-关于backward中的retain_graph的问题)
 - [12. 一个框架中多网络训练的require_grad问题](#12-一个框架中多网络训练的requires_grad问题)
 - [13. 关于tensorboardX和pytorch版本问题](#13-关于tensorboardX和pytorch版本问题)
+- [14. pytorch中节省显存的小技巧](#14-pytorch中节省显存的小技巧)
 <!--TOC-->
 
 ### 1. 关于pytorch中的初始化问题
@@ -79,4 +80,15 @@ loss3.backward() # note here no retain_graph=True for freeing the computation gr
 在训练期间，遇到了tensorboardX报错，比如init() got an unexpected keyword argument 'record_shapes'和缺失参数的错误，解决办法可以调整tensorboardX或者pytorch版本，已确定tensorboardX1.8和pytorch1.1.0可以使用。
 参考：https://blog.csdn.net/jzwong/article/details/104130073
 
+### 14. pytorch中节省显存的小技巧
+validation的时候用eval()和with torch.no_grad() (自己使用效果显著)
+减少batch size 和输入数据的样本数
+尽可能使用inplace操作， 比如relu 可以使用 inplace=True
+每次循环结束时 删除 loss，可以节约很少显存
+使用float16精度混合计算。NVIDIA英伟达 apex，很好用，可以节约将近50%的显存，但要小心一些不安全的操作如 mean和sum，溢出fp16
+记录和获取数据时，使用loss += loss.detach()来获取不需要梯度回传的部分
+用checkpoint牺牲计算速度：在Pytorch-0.4.0出来了一个新的功能，可以将一个计算过程分成两半，也就是如果一个模型需要占用的显存太大了，我们就可以先计算一半，保存后一半需要的中间结果，然后再计算后一半。新的checkpoint允许我们只存储反向传播所需要的部分内容。如果当中缺少一个输出(为了节省内存而导致的)，checkpoint将会从最近的检查点重新计算中间输出，以便减少内存使用(当然计算时间增加了)
+torch.backends.cudnn.benchmark = True 在程序刚开始加这条语句可以提升一点训练速度，没什么额外开销
+每个batch后把所有参数从GPU拿出来后删除  
+参考：https://www.zhihu.com/question/274635237 ， https://discuss.pytorch.org/t/model-eval-vs-with-torch-no-grad/19615/38
 
