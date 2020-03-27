@@ -239,3 +239,9 @@ b.show()
 # 7. Python类中的 私有变量和私有方法（伪私有）
 python中实际上都是public，没有真正的私有化支持，但是可以在变量和方法前面加上双下划线“__”，变成伪私有，这样外部类就访问不了了。  
 参考：https://blog.csdn.net/sxingming/article/details/52875125
+
+# 8. python-Counter计数函数
+python中的counter很有用，可以直接结算处list中各个元素的个数，并可以利用common_k得到数量最大的前K个
+参考：https://blog.csdn.net/u014755493/article/details/69812244
+
+
