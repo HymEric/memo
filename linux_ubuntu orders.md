@@ -37,3 +37,5 @@
 # 13. 将A文件夹下所有图片移动到B
 * find ./A -name "*.jpg" | xargs mv -t ./B
 
+# 14. 深入理解export关键字
+https://blog.csdn.net/weixin_38256474/article/details/90713950?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
