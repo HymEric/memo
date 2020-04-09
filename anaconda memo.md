@@ -83,3 +83,8 @@ If you run py file and get the same result, even you change the code or delete t
 $ python setup.py install --record files.txt
 $ cat files.txt | xargs rm -rf          # delete
 ```
+
+# 20. the conflict among numpy, scipy and scikit-learn
+When I use sklearn there are ImportError: DLL load failed: 找不到指定的模块 error, this would happen in anaconda install,  
+you can uninstall them by: scikit-learn, numpy, scipy using pip  
+and install them by numpy, scipy and scikit-learn using pip  
