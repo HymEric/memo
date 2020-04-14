@@ -15,7 +15,7 @@
 - [12. 一个框架中多网络训练的require_grad问题](#12-一个框架中多网络训练的requires_grad问题)
 - [13. 关于tensorboardX和pytorch版本问题](#13-关于tensorboardX和pytorch版本问题)
 - [14. pytorch中节省显存的小技巧](#14-pytorch中节省显存的小技巧)
-- [15. 设置单独变量的学习率的方法（不同于层，这里是单独变量）](#15-设置单独变量的学习率的方法（不同于层，这里是单独变量）)
+- [15. 设置单独变量的学习率的方法](#15-设置单独变量的学习率的方法)
 <!--TOC-->
 
 ### 1. 关于pytorch中的初始化问题
@@ -93,7 +93,7 @@ torch.backends.cudnn.benchmark = True 在程序刚开始加这条语句可以提
 每个batch后把所有参数从GPU拿出来后删除  
 参考：https://www.zhihu.com/question/274635237 ， https://discuss.pytorch.org/t/model-eval-vs-with-torch-no-grad/19615/38
 
-### 15. 设置单独变量的学习率的方法（不同于层，这里是单独变量）
+### 15. 设置单独变量的学习率的方法
 ```python
 for name, value in model.named_parameters():
 	if "Parameter" in name:
