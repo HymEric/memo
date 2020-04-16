@@ -244,4 +244,8 @@ python中实际上都是public，没有真正的私有化支持，但是可以�
 python中的counter很有用，可以直接结算处list中各个元素的个数，并可以利用common_k得到数量最大的前K个
 参考：https://blog.csdn.net/u014755493/article/details/69812244
 
+# 9. python中的垃圾回收
+总体来说，在Python中，主要通过引用计数进行垃圾回收；通过 “标记-清除” 解决容器对象可能产生的循环引用问题；通过 “分代回收” 以空间换时间的方法提高垃圾回收效率。
+refer: https://zhuanlan.zhihu.com/p/83251959
+
 
