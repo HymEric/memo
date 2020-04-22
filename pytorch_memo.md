@@ -16,6 +16,7 @@
 - [13. 关于tensorboardX和pytorch版本问题](#13-关于tensorboardX和pytorch版本问题)
 - [14. pytorch中节省显存的小技巧](#14-pytorch中节省显存的小技巧)
 - [15. 设置单独变量的学习率的方法](#15-设置单独变量的学习率的方法)
+- [16. 简单的单机多GPU训练](#16-简单的单机多GPU训练)
 <!--TOC-->
 
 ### 1. 关于pytorch中的初始化问题
@@ -113,3 +114,16 @@ optimizer = torch.optim.Adam(
 )
 ```
 参考：https://blog.csdn.net/tiankongtiankong01/article/details/101534218
+
+### 16. 简单的单机多GPU训练
+因为pytorch默认是一块GPU训练的，所以如果现存不够我们想多个GPU并行训练的时候，可以使用以下主要代码：
+```python
+model = Model(input_size, output_size)
+if torch.cuda.device_count() > 1:
+  print("Let's use", torch.cuda.device_count(), "GPUs!")
+  # dim = 0 [30, xxx] -> [10, ...], [10, ...], [10, ...] on 3 GPUs
+  model = nn.DataParallel(model)
+model.to(device)
+```
+refer: https://pytorch.org/tutorials/beginner/blitz/data_parallel_tutorial.html
+
