@@ -1,8 +1,8 @@
-# 1. python -m
+### 1. python -m
 * run library module as a script (terminates option list)意思是将库中的python模块用作脚本去运行。
 * python -m SimpleHTTPServer    #python2中启动一个简单的http服务器
 * python -m http.server    #python3中启动一个简单的http服务器
-# 2.use __future__
+### 2.use __future__
 * 简单说可以是在2.7中使用3.x的特性，比如
 * 如果你想在Python 2.7的代码中直接使用Python 3.x的除法，可以通过__future__模块的division实现：
 ```python
@@ -17,7 +17,7 @@ results:
 10.0 / 3 = 3.33333333333
 10 // 3 = 3
 ```
-# 3. numpy :mnp.lib.pad
+### 3. numpy :mnp.lib.pad
 * 填补一个数组。
 
 pad（array，pad_width，mode，**kwars）
@@ -57,7 +57,7 @@ array([[10, 10, 10, 10, 10, 10, 10],
   	 [10, 10, 10, 10, 10, 10, 10],
  	 [10, 10, 10, 10, 10, 10, 10]])
 ```
-# 4. argparse
+### 4. argparse
 * argparse is a Command line parsing module(命令行解析)
 * 位置参数
 ```python
@@ -184,7 +184,7 @@ $ python prog.py --flag_int 0.02 --double 0.03 a 1
 Namespace(flag_int=0.02)
 ['--double', '0.03', 'a', '1']
 ```
-# 5. glob.glob和排序
+### 5. glob.glob和排序
 * import glob
 ```python
 #imgs存放图片,相当于名字路径
@@ -197,7 +197,7 @@ print(imgs)
 >>>['0.png', '1.png', '10.png', '100.png', '101.png', '102.png', '103.png', '104.png',....]
 >>>['0.png', '1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png',.....]
 ```
-# 6. importlib.import_module动态导入模块
+### 6. importlib.import_module动态导入模块
 文件结构
 
 ```
@@ -236,16 +236,25 @@ b.show()
 注意，相对导入有个一点.， 类似路径
 可以参考： https://blog.csdn.net/xie_0723/article/details/78004649
 
-# 7. Python类中的 私有变量和私有方法（伪私有）
+### 7. Python类中的 私有变量和私有方法（伪私有）
 python中实际上都是public，没有真正的私有化支持，但是可以在变量和方法前面加上双下划线“__”，变成伪私有，这样外部类就访问不了了。  
 参考：https://blog.csdn.net/sxingming/article/details/52875125
 
-# 8. python-Counter计数函数
+### 8. python-Counter计数函数
 python中的counter很有用，可以直接结算处list中各个元素的个数，并可以利用common_k得到数量最大的前K个
 参考：https://blog.csdn.net/u014755493/article/details/69812244
 
-# 9. python中的垃圾回收
+### 9. python中的垃圾回收
 总体来说，在Python中，主要通过引用计数进行垃圾回收；通过 “标记-清除” 解决容器对象可能产生的循环引用问题；通过 “分代回收” 以空间换时间的方法提高垃圾回收效率。
 refer: https://zhuanlan.zhihu.com/p/83251959
 
-
+### 10. 使用chain更优雅的迭代数据
+itertools.chain() 方法可以用来简化迭代任务。 它接受一个可迭代对象列表作为输入，并返回一个迭代器，有效的屏蔽掉在多个容器中迭代细节。使用 chain() 的一个常见场景是当你想对不同的集合中所有元素执行某些操作的时候。这种解决方案要比使用两个单独的循环更加优雅！
+```python
+# Various working sets of items
+active_items = set()
+inactive_items = set()
+# Iterate over all items
+for item in chain(active_items, inactive_items):
+# Process item
+```
