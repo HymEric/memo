@@ -42,7 +42,7 @@
 # 11. update a package
 * conda update package_name
 
-# 12. delete a oackage
+# 12. delete a package
 * conda remove package_name
 
 # 13. list all installed package
@@ -88,3 +88,7 @@ $ cat files.txt | xargs rm -rf          # delete
 When I use sklearn there are ImportError: DLL load failed: 找不到指定的模块 error, this would happen in anaconda install,  
 you can uninstall them by: scikit-learn, numpy, scipy using pip  
 and install them by numpy, scipy and scikit-learn using pip  
+
+# 21. 安装pytorch很慢，主要是cudatoolkit下载很慢问题（20200523）
+如果只有几个包不行，可以选择手动拷贝相应的pkgs下面的tar文件，之后从本地装
+如：conda install --use-local  boost-1.59.0-py27_0.tar.bz2
