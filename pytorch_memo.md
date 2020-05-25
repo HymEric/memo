@@ -127,3 +127,7 @@ model.to(device)
 ```
 refer: https://pytorch.org/tutorials/beginner/blitz/data_parallel_tutorial.html
 
+### 17. Pytorch对两张图片进行相同的数据增广操作，输入的是数据对
+可以在自己定的Dataset中进行操作
+参考：https://blog.csdn.net/happyeveryday62/article/details/104350332
+
