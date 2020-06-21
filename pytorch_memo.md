@@ -130,4 +130,7 @@ refer: https://pytorch.org/tutorials/beginner/blitz/data_parallel_tutorial.html
 ### 17. Pytorch对两张图片进行相同的数据增广操作，输入的是数据对
 可以在自己定的Dataset中进行操作
 参考：https://blog.csdn.net/happyeveryday62/article/details/104350332
+需要注意，多机训练的时候由于使用了nn.DataParallel，保存的模型里面会多一个module的东西，再使用测试的时候也需要用nn.DataParallel进行加在模型参数，或者使用另一种OrderDict进行转换，refer：https://discuss.pytorch.org/t/solved-keyerror-unexpected-key-module-encoder-embedding-weight-in-state-dict/1686/3
+
+
 
