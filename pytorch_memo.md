@@ -17,6 +17,8 @@
 - [14. pytorch中节省显存的小技巧](#14-pytorch中节省显存的小技巧)
 - [15. 设置单独变量的学习率的方法](#15-设置单独变量的学习率的方法)
 - [16. 简单的单机多GPU训练](#16-简单的单机多GPU训练)
+- [17. Pytorch对两张图片进行相同的数据增广操作输入的是数据对](#Pytorch对两张图片进行相同的数据增广操作输入的是数据对)
+- [17. 安装mmdetection](#安装mmdetection)
 <!--TOC-->
 
 ### 1. 关于pytorch中的初始化问题
@@ -126,11 +128,17 @@ if torch.cuda.device_count() > 1:
 model.to(device)
 ```
 refer: https://pytorch.org/tutorials/beginner/blitz/data_parallel_tutorial.html
-
-### 17. Pytorch对两张图片进行相同的数据增广操作，输入的是数据对
-可以在自己定的Dataset中进行操作
-参考：https://blog.csdn.net/happyeveryday62/article/details/104350332
 需要注意，多机训练的时候由于使用了nn.DataParallel，保存的模型里面会多一个module的东西，再使用测试的时候也需要用nn.DataParallel进行加在模型参数，或者使用另一种OrderDict进行转换，refer：https://discuss.pytorch.org/t/solved-keyerror-unexpected-key-module-encoder-embedding-weight-in-state-dict/1686/3
 
+### 17. Pytorch对两张图片进行相同的数据增广操作输入的是数据对
+可以在自己定的Dataset中进行操作
+参考：https://blog.csdn.net/happyeveryday62/article/details/104350332
 
+### 18. 安装mmdetection
+安装完torch和torchvision之后，需要要先安装cpython，再检查安装的cuda版本和使用的GPU本地版本使用nvidia-smi可查看是否一致，更准确的可以通过~/.bashrc查看cuda地址，之后再进行
+```shell
+pip install -r requirements/build.txt
+pip install "git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI"
+pip install -v -e .  # or "python setup.py develop"
+```
 
