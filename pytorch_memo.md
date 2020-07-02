@@ -19,6 +19,7 @@
 - [16. 简单的单机多GPU训练](#16-简单的单机多GPU训练)
 - [17. Pytorch对两张图片进行相同的数据增广操作输入的是数据对](#17-Pytorch对两张图片进行相同的数据增广操作输入的是数据对)
 - [18. 安装mmdetection](#18-安装mmdetection)
+- [19. 使用pytorch自带tensorboard的bug](#使用pytorch自带tensorboard的bug)
 <!--TOC-->
 
 ### 1. 关于pytorch中的初始化问题
@@ -141,4 +142,14 @@ pip install -r requirements/build.txt
 pip install "git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI"
 pip install -v -e .  # or "python setup.py develop"
 ```
+
+### 19. 使用pytorch自带tensorboard的bug
+如果在导入包```from torch.utils.tensorboard import SummaryWriter```的时候报错，可以使用以下方式解决：
+```
+从conda环境中删除了所有的Tensorflow或Tensorboard安装。
+然后通过激活相同的conda环境“ pip install -U tb-nightly”
+然后输入“ pip install -U future”
+完成
+```
+进行之后即可使用。
 
