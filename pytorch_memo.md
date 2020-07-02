@@ -19,7 +19,7 @@
 - [16. 简单的单机多GPU训练](#16-简单的单机多GPU训练)
 - [17. Pytorch对两张图片进行相同的数据增广操作输入的是数据对](#17-Pytorch对两张图片进行相同的数据增广操作输入的是数据对)
 - [18. 安装mmdetection](#18-安装mmdetection)
-- [19. 使用pytorch自带tensorboard的bug](#使用pytorch自带tensorboard的bug)
+- [19. 使用pytorch自带tensorboard的bug](#19-使用pytorch自带tensorboard的bug)
 <!--TOC-->
 
 ### 1. 关于pytorch中的初始化问题
