@@ -5,6 +5,27 @@
 * check the current config setting: conda config --show
 * delete channels: conda config --remove channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 
+mayble have some problems because VPN, you can directly use:
+```shell
+channels:
+  - defaults
+show_channel_urls: true
+channel_alias: http://mirrors.tuna.tsinghua.edu.cn/anaconda
+default_channels:
+  - http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+  - http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+  - http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
+  - http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+custom_channels:
+  conda-forge: http://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  msys2: http://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  bioconda: http://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  menpo: http://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch: http://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  simpleitk: http://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  ```
+
 # 1. update anaconda
 * conda update conda -> conda update anaconda
 
