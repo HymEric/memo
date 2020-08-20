@@ -39,3 +39,10 @@
 
 # 14. 深入理解export关键字
 https://blog.csdn.net/weixin_38256474/article/details/90713950?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
+
+# 15. 统计当前目录中的问价或者文件夹的数量
+使用的是ls -l, grep, wc等命令的组合,ls是路举出当前目录的所有文件，之后grep "^d"代表过滤出文件夹，^-是统计文件数量，最后的wc -l是统计过滤出来的行数。
+```shell
+ls -l | grep "^-" | wc -l # 统计文件数量
+ls -l | grep "^d" | wc -l # 统计文件夹数量
+```
