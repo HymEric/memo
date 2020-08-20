@@ -48,3 +48,8 @@ ls -l | grep "^d" | wc -l # 统计文件夹数量
 ```
 refer： https://blog.csdn.net/niguang09/article/details/6445778
 
+按照扩展名统计文件个数，比如统计mp4
+```shell
+ls *.mp4 | wc -l
+```
+
