@@ -46,3 +46,5 @@ https://blog.csdn.net/weixin_38256474/article/details/90713950?depth_1-utm_sourc
 ls -l | grep "^-" | wc -l # 统计文件数量
 ls -l | grep "^d" | wc -l # 统计文件夹数量
 ```
+refer： https://blog.csdn.net/niguang09/article/details/6445778
+
