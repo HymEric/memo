@@ -1,6 +1,7 @@
 # 0. add a channels by Tsinghua to speedup
 * conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 * conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+* conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ # pytorch
 * conda config --set show_channel_urls yes
 * check the current config setting: conda config --show
 * delete channels: conda config --remove channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
