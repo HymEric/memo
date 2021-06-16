@@ -53,3 +53,9 @@ refer： https://blog.csdn.net/niguang09/article/details/6445778
 ls *.mp4 | wc -l
 ```
 
+# 16. VIM常用简单命令
+```shell
+ctrl + g 或者 :$ # 到最后一行
+gg 或者 :1 # 到首行
+/字符串 # 查找该字符串，比如/123，查找首次出现123的位置，需要注意反义字符
+```
